@@ -40,18 +40,18 @@ function displayStudents() {
 // Edit student function
 function editStudent(index) {
     const students = currentUser.students;
-    const studentToEdit = students[index];
+    const {name, age, address, contactNumber, membership, beltColor} = students[index];
 
     // Show the Edit Form with the current student data
     document.getElementById('editStudentForm').style.display = 'block';
 
     // Populate the form with student data
-    document.getElementById('studentName').value = studentToEdit.name;
-    document.getElementById('age').value = studentToEdit.age;
-    document.getElementById('address').value = studentToEdit.address;
-    document.getElementById('contactNumber').value = studentToEdit.contactNumber;
-    document.getElementById('membership').value = studentToEdit.membership;
-    document.getElementById('beltColor').value = studentToEdit.beltColor;
+    document.getElementById('studentName').value = name;
+    document.getElementById('age').value = age;
+    document.getElementById('address').value = address;
+    document.getElementById('contactNumber').value = contactNumber;
+    document.getElementById('membership').value = membership;
+    document.getElementById('beltColor').value = beltColor;
 
     // Change form submission logic to update the student data
     document.getElementById('addStudentForm').onsubmit = function(event) {
