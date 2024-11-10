@@ -1,0 +1,13 @@
+.dashboardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: auto; */
+    width: fit-content;
+    background-color: aqua;
+}
+
+.dashboard {
+    padding: 5%;
+    background-color: blueviolet;
+}
