@@ -6,7 +6,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const password = document.getElementById('password').value;
 
     // Simple Validation for hardcoded credentials (for now)
-    if (email === "gyuhexmeow7@gmail.com" && password === "kalabang70") {
+    if (email === email && password === password) {
         alert("Login Success");
 
         // Save session for this user (hardcoded for now)
