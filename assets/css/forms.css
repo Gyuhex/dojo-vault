@@ -1,11 +1,12 @@
 /* General form styling */
-.container {
-    max-width: 600px;
-    margin: 0 auto;
+.studentForm {
+    background-color: #c3cfdb;
+    max-width: 500px;  /* Limit the width of the form */
+    width: 100%;  /* Allow the form to scale down if necessary */
     padding: 20px;
-    background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;  /* Space around form within content */
 }
 
 /* Form title */
@@ -45,9 +46,18 @@ select:focus {
     display: block;
 }
 
+/* Center the submit button container */
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px; /* Optional: adds spacing above the button */
+}
+
 /* Submit button */
 button[type="submit"] {
-    width: 100%;
+    width: 280px;  /* Make button take full width within the form */
     padding: 12px;
     background-color: #007bff;
     color: #fff;
@@ -63,18 +73,21 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Spacing between form groups */
-.mb-3 {
-    margin-bottom: 15px;
-}
-
-/* Optional: Add some responsiveness */
+/* Responsive adjustments */
 @media (max-width: 600px) {
-    .container {
-        padding: 15px;
+    .studentForm {
+        max-width: 400px;  /* Shrink form width on small screens */
     }
-    
+
+    input[type="text"],
+    input[type="number"],
+    input[type="tel"],
+    select {
+        padding: 8px;
+    }
+
     button[type="submit"] {
         padding: 10px;
+        font-size: 1rem;
     }
 }
