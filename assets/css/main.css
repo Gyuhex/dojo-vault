@@ -4,7 +4,7 @@
 }
 
 #sidebar {
-  width: 250px;
+  min-width: 200px;
   background-color: #343a40;
 }
 
@@ -43,11 +43,11 @@
 .content {
   display: flex;
   flex-direction: column;
-  align-items: center;  /* Centers content horizontally */
-  justify-content: center;  /* Centers content vertically */
+  align-items: center;  
+  justify-content: center;  
   background-color: #1d81e6;
   width: 100%;
-  min-height: 100vh;  /* Ensures content takes at least the full height of the viewport */
+  min-height: 100vh; 
   padding: 10px;
 }
 
