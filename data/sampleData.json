@@ -1,0 +1,28 @@
+{
+    "students": [
+        {
+            "name": "John Doe",
+            "age": 25,
+            "address": "123 Elm Street, Springfield",
+            "contactNumber": "123-456-7890",
+            "membership": "Paid",
+            "beltColor": "Blue"
+        },
+        {
+            "name": "Jane Smith",
+            "age": 22,
+            "address": "456 Oak Avenue, Metropolis",
+            "contactNumber": "987-654-3210",
+            "membership": "Unpaid",
+            "beltColor": "Red"
+        },
+        {
+            "name": "Mike Johnson",
+            "age": 28,
+            "address": "789 Pine Lane, Gotham",
+            "contactNumber": "555-678-1234",
+            "membership": "Paid",
+            "beltColor": "Green"
+        }
+    ]
+}
