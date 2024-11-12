@@ -3,10 +3,10 @@
     background-color: #c3cfdb;
     max-width: 500px;  /* Limit the width of the form */
     width: 100%;  /* Allow the form to scale down if necessary */
-    /* padding: 20px; */
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* margin: 20px 0;  */
+    margin: 20px 0; 
 }
 
 /* Form title */
