@@ -2,32 +2,37 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Align charts to the top */
     background-color: #f8f9fa;
     padding: 20px;
     box-sizing: border-box;
-  }
-  
-  .dashboard {
+}
+
+.dashboard {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     padding: 20px;
     background-color: blueviolet;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: white;
-  }
-  
-  .dashboard h2 {
+}
+
+.dashboard h2 {
     text-align: center;
     margin-bottom: 20px;
-  }
+}
 
-  .chart-container {
-    width: 80%;
-    margin: 0 auto;
+.chart-container {
+    width: 45%;
+    margin: 20px 2.5%; /* Add some margin to separate the charts */
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chart-container canvas {
+    width: 100%;
+    height: auto;
 }

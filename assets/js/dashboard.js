@@ -1,9 +1,7 @@
+// Function to display dashboard data
 function displayData() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser')) || { students: [] };
     const studentInfo = currentUser.students;
-
-    // Total number of students
-    const totalStudents = studentInfo.length;
 
     // Calculate belt counts
     const beltCounts = studentInfo.reduce((counts, student) => {
@@ -23,38 +21,30 @@ function displayData() {
     // Build the HTML to display data
     displayDashboard.innerHTML = `
         <h2>Dashboard</h2>
-        <div>
-            <h3>Total Students: ${totalStudents}</h3>
+        <div class="chart-container">
+            <canvas id="beltChart"></canvas>
         </div>
-        <div>
-            <h4>Belt Counts</h4>
-            <ul>
-                ${Object.keys(beltCounts).map(belt => `<li>${belt}: ${beltCounts[belt]}</li>`).join('')}
-            </ul>
-        </div>
-        <div>
-            <h4>Membership Status</h4>
-            <ul>
-                <li>Paid: ${membershipCounts['paid'] || 0}</li>
-                <li>Unpaid: ${membershipCounts['unpaid'] || 0}</li>
-            </ul>
+        <div class="chart-container">
+            <canvas id="membershipChart"></canvas>
         </div>
     `;
+
+    // Render the charts after data is displayed
+    renderBeltChart(beltCounts);
+    renderMembershipChart(membershipCounts);
 }
 
-// Toggle sidebar
+// Function to toggle sidebar visibility
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('active');
 }
 
-// Call displayData on page load
-displayData();
-
+// Function to render the belt chart
 function renderBeltChart(beltCounts) {
     const ctx = document.getElementById('beltChart').getContext('2d');
 
-    // Prepare the data
+    // Prepare the data for the chart
     const labels = Object.keys(beltCounts); // Belt colors
     const data = Object.values(beltCounts); // Number of students per belt
 
@@ -94,15 +84,38 @@ function renderBeltChart(beltCounts) {
     });
 }
 
-// Call renderBeltChart with belt data
-function displayData() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    const studentInfo = currentUser.students;
+// Function to render the membership status chart
+function renderMembershipChart(membershipCounts) {
+    const ctx = document.getElementById('membershipChart').getContext('2d');
 
-    const beltCounts = studentInfo.reduce((counts, student) => {
-        counts[student.beltColor] = (counts[student.beltColor] || 0) + 1;
-        return counts;
-    }, {});
+    // Prepare the data for the chart
+    const labels = ['Paid', 'Unpaid'];
+    const data = [membershipCounts['paid'] || 0, membershipCounts['unpaid'] || 0];
 
-    renderBeltChart(beltCounts);
+    // Create the chart
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Membership Status',
+                data: data,
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 99, 132, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
 }
+
+// Call displayData on page load
+displayData();
