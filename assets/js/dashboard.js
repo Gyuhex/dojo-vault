@@ -3,6 +3,9 @@ function displayData() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser')) || { students: [] };
     const studentInfo = currentUser.students;
 
+    // Calculate Student Count
+    const totalStudents = studentInfo.length;
+
     // Calculate belt counts
     const beltCounts = studentInfo.reduce((counts, student) => {
         counts[student.beltColor] = (counts[student.beltColor] || 0) + 1;
@@ -30,7 +33,7 @@ function displayData() {
     `;
 
     // Render the charts after data is displayed
-    renderBeltChart(beltCounts);
+    renderBeltChart(beltCounts, totalStudents);
     renderMembershipChart(membershipCounts);
 }
 
@@ -41,7 +44,7 @@ function toggleSidebar() {
 }
 
 // Function to render the belt chart
-function renderBeltChart(beltCounts) {
+function renderBeltChart(beltCounts, totalStudents) {
     const ctx = document.getElementById('beltChart').getContext('2d');
 
     // Prepare the data for the chart
@@ -54,7 +57,7 @@ function renderBeltChart(beltCounts) {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Number of Students',
+                label: `${totalStudents} Number of Students`,
                 data: data,
                 backgroundColor: [
                     'rgba(75, 192, 192, 0.2)',
