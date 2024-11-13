@@ -57,7 +57,7 @@ function renderBeltChart(beltCounts, totalStudents) {
         data: {
             labels: labels,
             datasets: [{
-                label: `${totalStudents} Number of Students`,
+                label: `${totalStudents} Total Students`,
                 data: data,
                 backgroundColor: [
                     'rgba(75, 192, 192, 0.2)',
