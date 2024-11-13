@@ -4,25 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="layout">
+        <!-- Sidebar -->
         <div class="bg-dark border-right" id="sidebar">
-            <div class="sidebar-heading text-white text-center">Dojo Vault</div>
+            <div class="sidebar-heading text-white">Dojo Vault</div>
             <div class="list-group list-group-flush">
                 <a href="dashboard.html" class="list-group-item list-group-item-action bg-dark text-white">Dashboard</a>
                 <a href="students.html" class="list-group-item list-group-item-action bg-dark text-white">Students</a>
                 <a href="add-student.html" class="list-group-item list-group-item-action bg-dark text-white">Add Student</a>
                 <a href="#" class="list-group-item list-group-item-action bg-dark text-white" onclick="logout()">Logout</a>
             </div>
-            </div>
-    
-        <div class="container dashboardContainer">
-            <div class="dashboard" id="displayDashboard">
-                <!-- Dynamic content will be inserted here -->
+        </div>
+
+        <!-- Main Content -->
+        <div id="page-content-wrapper">
+            <button class="btn btn-primary d-md-none" id="toggleSidebar" onclick="toggleSidebar()">☰</button>
+            <div class="container dashboardContainer">
+                <div class="dashboard" id="displayDashboard">
+                    <!-- Dashboard content will be dynamically loaded -->
+                    <div class="chart-container">
+                        <canvas id="beltChart"></canvas>
+                    </div>                    
+                </div>
             </div>
         </div>
     </div>

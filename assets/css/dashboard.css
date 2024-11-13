@@ -1,13 +1,33 @@
 .dashboardContainer {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
-    background-color: aqua;
-}
-
-.dashboard {
-    padding: 5%;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .dashboard {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
     background-color: blueviolet;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+  }
+  
+  .dashboard h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .chart-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
