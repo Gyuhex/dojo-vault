@@ -18,7 +18,7 @@ form {
     border-radius: 1em;
     padding: 2em;
     width: 50vw;
-    background-color: #ff9292;
+    background-color: #F5E9E2;
 }
 
 /* Form input fields */
@@ -63,7 +63,7 @@ select:focus {
 button[type="submit"] {
     width: 280px;  /* Make button take full width within the form */
     padding: 12px;
-    background-color: #007bff;
+    background-color: #FF5CFC;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -74,7 +74,7 @@ button[type="submit"] {
 
 /* Submit button hover effect */
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #fd7dfb;
 }
 
 /* Responsive adjustments */
