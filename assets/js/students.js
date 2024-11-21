@@ -25,8 +25,10 @@ function displayStudents() {
                         <p class="card-text"><strong>Contact:</strong> ${student.contactNumber}</p>
                         <p class="card-text"><strong>Membership:</strong> ${student.membership}</p>
                         <p class="card-text"><strong>Belt Color:</strong> ${student.beltColor}</p>
-                        <button onclick="editStudent(${index})" class="btn btn-warning btn-sm">Edit</button>
-                        <button onclick="deleteStudent(${index})" class="btn btn-danger btn-sm">Delete</button>
+                        <div class="d-flex justify-content-center" align-items-center>
+                            <button onclick="editStudent(${index})" class="btn btn-warning btn-sm mr-1">Edit</button>
+                            <button onclick="deleteStudent(${index})" class="btn btn-danger btn-sm">Delete</button>
+                        </div>
                     </div>
                 </div>
             `;
