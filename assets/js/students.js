@@ -45,7 +45,11 @@ function editStudent(index) {
     const {name, age, address, contactNumber, membership, beltColor} = students[index];
 
     // Show the Edit Form with the current student data
-    document.getElementById('editStudentForm').style.display = 'block';
+    document.getElementById('editStudentForm').style.display = 'flex';
+    document.getElementById('editStudentForm').style.flexDirection = "column";
+    document.getElementById('editStudentForm').style.justifyContent= "center";
+    document.getElementById('editStudentForm').style.alignItems = "center";
+
 
     // Populate the form with student data
     document.getElementById('studentName').value = name;
