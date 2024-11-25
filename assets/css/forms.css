@@ -1,9 +1,14 @@
 /* General form styling */
-.studentForm {
+#addStudentForm {
     max-width: 500px;  /* Limit the width of the form */
     width: 100%;  /* Allow the form to scale down if necessary */
+    max-height: 500px;
     padding: 20px;
     border-radius: 8px;
+}
+
+.studentForm {
+    height: 100vh;
 }
 
 /* Form title */
@@ -80,7 +85,8 @@ button[type="submit"]:hover {
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .studentForm {
-        max-width: 400px;  /* Shrink form width on small screens */
+        min-width: 600px;
+        background-color: #007bff;  
     }
 
     input[type="text"],
