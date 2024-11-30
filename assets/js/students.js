@@ -12,11 +12,13 @@ class Student {
 class StudentManager {
     constructor() {}
 
+    // Fetch student data from localStorage
     getStudentData = () => {
         const storedStudentData = JSON.parse(localStorage.getItem('currentUser'));
         return storedStudentData ? storedStudentData.students : [];
     };
 
+    // Display students
     displayStudents = () => {
         const studentsList = document.getElementById('studentsList');
         if (!studentsList) {
@@ -25,7 +27,7 @@ class StudentManager {
         }
 
         const students = this.getStudentData();
-        studentsList.innerHTML = ''; // Clear the existing student list
+        studentsList.innerHTML = ''; // Clear existing student list
 
         if (students.length > 0) {
             students.forEach((student, index) => {
@@ -42,8 +44,8 @@ class StudentManager {
                             <p class="card-text"><strong>Membership:</strong> ${student.membership}</p>
                             <p class="card-text"><strong>Belt Color:</strong> ${student.beltColor}</p>
                             <div class="d-flex justify-content-center align-items-center">
-                                <button onclick="editStudent(${index})" class="btn btn-warning btn-sm mr-1">Edit</button>
-                                <button onclick="deleteStudent(${index})" class="btn btn-danger btn-sm">Delete</button>
+                                <button onclick="studentManager.editStudent(${index})" class="btn btn-warning btn-sm mr-1">Edit</button>
+                                <button onclick="studentManager.deleteStudent(${index})" class="btn btn-danger btn-sm">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -53,6 +55,66 @@ class StudentManager {
         } else {
             studentsList.innerHTML = `<p class="text-center">No students found.</p>`;
         }
+    };
+
+    // Edit student logic
+    editStudent = (index) => {
+        const students = this.getStudentData();
+        const student = students[index]; // Get the student based on the index
+
+        // Show the Edit Form with the current student data
+        document.getElementById('editStudentForm').style.display = 'flex';
+        document.getElementById('editStudentForm').style.flexDirection = "column";
+        document.getElementById('editStudentForm').style.justifyContent = "center";
+        document.getElementById('editStudentForm').style.alignItems = "center";
+
+        // Populate the form with student data
+        document.getElementById('studentName').value = student.name;
+        document.getElementById('age').value = student.age;
+        document.getElementById('address').value = student.address;
+        document.getElementById('contactNumber').value = student.contactNumber;
+        document.getElementById('membership').value = student.membership;
+        document.getElementById('beltColor').value = student.beltColor;
+
+        // Change form submission logic to update the student data
+        document.getElementById('editStudentForm').onsubmit = (event) => {
+            event.preventDefault();
+
+            // Update the student info
+            students[index] = {
+                name: document.getElementById('studentName').value,
+                age: document.getElementById('age').value,
+                address: document.getElementById('address').value,
+                contactNumber: document.getElementById('contactNumber').value,
+                membership: document.getElementById('membership').value,
+                beltColor: document.getElementById('beltColor').value
+            };
+
+            // Save the updated students array to localStorage
+            localStorage.setItem('currentUser', JSON.stringify({ students }));
+
+            // Refresh the displayed student list
+            this.displayStudents();
+
+            // Hide the form after successful submission
+            document.getElementById('editStudentForm').style.display = 'none';
+
+            // Optionally, reset the form and alert the user
+            alert('Student information updated!');
+            document.getElementById('editStudentForm').reset();
+        };
+    };
+
+    // Delete student logic (add this if it's missing)
+    deleteStudent = (index) => {
+        const students = this.getStudentData();
+        students.splice(index, 1); // Remove the student from the array
+
+        // Save the updated students array to localStorage
+        localStorage.setItem('currentUser', JSON.stringify({ students }));
+
+        // Refresh the displayed student list
+        this.displayStudents();
     };
 }
 
