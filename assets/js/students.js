@@ -1,7 +1,10 @@
 import { Student, StudentManager } from './modules/storage.js';
 
-// Example Usage
+// Create the student manager instance and attach it to the global window object
 const studentManager = new StudentManager();
+window.studentManager = studentManager; // Make it globally accessible
+
+// Example Usage
 studentManager.displayStudents();
 
 // Event listener for adding a student
