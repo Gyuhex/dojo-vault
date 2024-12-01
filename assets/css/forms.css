@@ -1,17 +1,24 @@
 /* General form styling */
-#addStudentForm {
+#editStudentForm {
     max-width: 500px;  /* Limit the width of the form */
     width: 100%;  /* Allow the form to scale down if necessary */
-    max-height: 500px;
-    padding: 20px;
+    max-height: fit-content;
+    padding: 10px;
     border-radius: 8px;
 }
 
-.studentForm {
-    height: 100vh;
+.modal-dialog {
+    height: fit-content;
 }
 
-/* Form title */
+/* Styling for the modal content */
+.modal-content {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f5e9e2;
+}
+
+/* Form title inside modal */
 h2 {
     text-align: center;
     color: #333;
@@ -19,11 +26,11 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* Form container inside modal */
 form {
-    border-radius: 1em;
-    padding: 2em;
-    width: 50vw;
-    background-color: #F5E9E2;
+    height: fit-content;
+    width: 100%;
+    background-color: transparent;
 }
 
 /* Form input fields */
@@ -66,7 +73,7 @@ select:focus {
 
 /* Submit button */
 button[type="submit"] {
-    width: 280px;  /* Make button take full width within the form */
+    width: 100%;  /* Make button take full width within the form */
     padding: 12px;
     background-color: #FF5CFC;
     color: #fff;
@@ -84,9 +91,9 @@ button[type="submit"]:hover {
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
-    .studentForm {
-        min-width: 600px;
-        background-color: #007bff;  
+    #editStudentForm {
+        padding: 10px;
+        width: 90%; /* Adjust form width for small screens */
     }
 
     input[type="text"],

@@ -58,52 +58,51 @@ class StudentManager {
     };
 
     // Edit student logic
-    editStudent = (index) => {
-        const students = this.getStudentData();
-        const student = students[index]; // Get the student based on the index
+editStudent = (index) => {
+    const students = this.getStudentData();
+    const student = students[index]; // Get the student based on the index
 
-        // Show the Edit Form with the current student data
-        document.getElementById('editStudentForm').style.display = 'flex';
-        document.getElementById('editStudentForm').style.flexDirection = "column";
-        document.getElementById('editStudentForm').style.justifyContent = "center";
-        document.getElementById('editStudentForm').style.alignItems = "center";
+    // Show the modal with the current student data
+    const modal = new bootstrap.Modal(document.getElementById('editStudentModal'));
+    modal.show();
 
-        // Populate the form with student data
-        document.getElementById('studentName').value = student.name;
-        document.getElementById('age').value = student.age;
-        document.getElementById('address').value = student.address;
-        document.getElementById('contactNumber').value = student.contactNumber;
-        document.getElementById('membership').value = student.membership;
-        document.getElementById('beltColor').value = student.beltColor;
+    // Populate the form with student data
+    document.getElementById('studentName').value = student.name;
+    document.getElementById('age').value = student.age;
+    document.getElementById('address').value = student.address;
+    document.getElementById('contactNumber').value = student.contactNumber;
+    document.getElementById('membership').value = student.membership;
+    document.getElementById('beltColor').value = student.beltColor;
 
-        // Change form submission logic to update the student data
-        document.getElementById('editStudentForm').onsubmit = (event) => {
-            event.preventDefault();
+    // Change form submission logic to update the student data
+    document.getElementById('editStudentForm').onsubmit = (event) => {
+        event.preventDefault();
 
-            // Update the student info
-            students[index] = {
-                name: document.getElementById('studentName').value,
-                age: document.getElementById('age').value,
-                address: document.getElementById('address').value,
-                contactNumber: document.getElementById('contactNumber').value,
-                membership: document.getElementById('membership').value,
-                beltColor: document.getElementById('beltColor').value
-            };
-
-            // Save the updated students array to localStorage
-            localStorage.setItem('currentUser', JSON.stringify({ students }));
-
-            // Refresh the displayed student list
-            this.displayStudents();
-
-            // Hide the form after successful submission
-            document.getElementById('editStudentForm').style.display = 'none';
-
-            // Optionally, reset the form and alert the user
-            alert('Student information updated!');
-            document.getElementById('editStudentForm').reset();
+        // Update the student info
+        students[index] = {
+            name: document.getElementById('studentName').value,
+            age: document.getElementById('age').value,
+            address: document.getElementById('address').value,
+            contactNumber: document.getElementById('contactNumber').value,
+            membership: document.getElementById('membership').value,
+            beltColor: document.getElementById('beltColor').value
         };
+
+        // Save the updated students array to localStorage
+        localStorage.setItem('currentUser', JSON.stringify({ students }));
+
+        // Refresh the displayed student list
+        this.displayStudents();
+
+        // Hide the modal after successful submission
+        modal.hide();
+
+        // Optionally, reset the form and alert the user
+        alert('Student information updated!');
+        document.getElementById('editStudentForm').reset();
     };
+};
+
 
     // Delete student logic
     deleteStudent = (index) => {
