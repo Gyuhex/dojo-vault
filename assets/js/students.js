@@ -105,7 +105,7 @@ class StudentManager {
         };
     };
 
-    // Delete student logic (add this if it's missing)
+    // Delete student logic
     deleteStudent = (index) => {
         const students = this.getStudentData();
         students.splice(index, 1); // Remove the student from the array
@@ -116,13 +116,30 @@ class StudentManager {
         // Refresh the displayed student list
         this.displayStudents();
     };
+
+    // Add student logic (Encapsulated within the class now)
+    addStudent = (student) => {
+        const currentUser = JSON.parse(localStorage.getItem('currentUser')) || { students: [] };
+
+        // Add new student to the current user's students array
+        currentUser.students.push(student);
+
+        // Save the updated currentUser back to localStorage
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+        // Refresh the displayed student list
+        this.displayStudents();
+
+        // Optionally, alert the user that the student was added
+        alert("Student added successfully!");
+    };
 }
 
 // Example Usage
 const studentManager = new StudentManager();
 studentManager.displayStudents();
 
-
+// Event listener for adding a student
 document.getElementById('addStudentForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -135,31 +152,10 @@ document.getElementById('addStudentForm').addEventListener('submit', function(ev
     const beltColor = document.getElementById('beltColor').value;
 
     // Create student object
-    const student = {
-        name: studentName,
-        age: age,
-        address: address,
-        contactNumber: contactNumber,
-        membership: membership,
-        beltColor: beltColor
-    };
+    const student = new Student(studentName, age, address, contactNumber, membership, beltColor);
 
-    // Get current user from localStorage
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
-    // Ensure the user has a students array; if not, initialize it
-    if (!currentUser.students) {
-        currentUser.students = [];
-    }
-
-    // Add new student to the current user's students array
-    currentUser.students.push(student);
-
-    // Save the updated currentUser back to localStorage
-    localStorage.setItem('currentUser', JSON.stringify(currentUser));
-
-    // Optional: Alert the user that the student was added
-    alert("Student added successfully!");
+    // Add student using the addStudent method
+    studentManager.addStudent(student);
 
     // Clear form fields (optional)
     document.getElementById('addStudentForm').reset();
