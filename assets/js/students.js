@@ -24,7 +24,4 @@ document.getElementById('addStudentForm').addEventListener('submit', function(ev
 
     // Add student using the addStudent method
     studentManager.addStudent(student);
-
-    // Clear form fields (optional)
-    document.getElementById('addStudentForm').reset();
 });
