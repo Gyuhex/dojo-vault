@@ -22,7 +22,6 @@ class StudentManager {
     displayStudents = () => {
         const studentsList = document.getElementById('studentsList');
         if (!studentsList) {
-            console.error("Element with id 'studentsList' not found.");
             return;
         }
 
