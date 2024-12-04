@@ -11,17 +11,15 @@
         <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
             <div class="card" style="width: 100%; max-width: 400px;">
                 <div class="card-body loginContainer">
-                    <h5 class="card-title text-center mb-4">Login to Dojo Vault</h5>
+                    <img class="logo" src="assets/img/logo.png" alt="A master with chains on hands">
+                    <h5 class="card-title text-center mb-3 mt-3">"Empowering Dojos with Digital Insight."</h5>
                     <form id="loginForm">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        <div>
+                            <input type="email" class="form-control mb-3" id="email" placeholder="Enter your email" required>
+
+                            <input type="password" class="form-control mb-3" id="password" placeholder="Enter your password" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <button type="submit" class="btn loginBtn w-100">Login</button>
                     </form>
                     <div class="text-center mt-3">
                         <a href="#">Forgot password?</a> | <a href="register.html">Create an account</a>

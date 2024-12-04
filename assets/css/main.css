@@ -1,3 +1,9 @@
+:root {
+  --background-color-components: #171C30; 
+  --text-color: #333333; 
+}
+
+
 .layout {
   display: flex;
   min-height: 100vh; /* Ensure full viewport height */
@@ -62,5 +68,19 @@
 }
 
 .loginContainer {
-  background-color: #343a40;
+  background-color: var(--background-color-components);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+  .logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  .loginContainer h5 {
+    color: #eaedf8;
 }
