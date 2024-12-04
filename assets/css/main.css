@@ -1,18 +1,29 @@
-:root {
-  --background-color-components: #171C30; 
-  --text-color: #333333; 
+body {
+  background-color: var(--background-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+:root {
+  --background-color: #2f314a;
+  --background-color-components: #171C30;
+  --primary-color: #FC4FE5;
+  --accent-color: #4199DB;
+  --text-color: #333333;
+  --input-border-color: #ddd;
+  --input-focus-border-color: #4199DB;
+}
 
 .layout {
   display: flex;
-  min-height: 100vh; /* Ensure full viewport height */
+  min-height: 100vh;
 }
 
 .content {
   width: calc(100% - 250px);
   height: 100%;
-  padding-bottom: 3em;
+  padding: 2em;
 }
 
 #sidebar {
@@ -48,46 +59,22 @@
   transition: margin-left 0.3s ease-in-out;
 }
 
+
 /* Responsive Sidebar for smaller screens */
 @media (max-width: 768px) {
   #sidebar {
-      position: fixed;
-      left: -250px;
-      top: 0;
-      height: 100%;
-      z-index: 1000;
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
   }
 
   #sidebar.active {
-      left: 0;
+    left: 0;
   }
 
   #page-content-wrapper {
-      margin-left: 0;
+    margin-left: 0;
   }
 }
-
-.loginContainer {
-  background-color: var(--background-color-components);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2em;
-}
-
-  .logo {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-  }
-
-  .loginContainer h5 {
-    font-size: 1rem;
-    color: #eaedf8;
-}
-
-  .loginBtn {
-    background: linear-gradient(90deg, #FC4FE5 0%, #8F54D9 50%, #4199DB 100%);
-    color: #eaedf8;
-  }

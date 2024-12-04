@@ -1,0 +1,107 @@
+/* Login container design */
+.loginContainer {
+    background-color: var(--background-color-components);
+    background: linear-gradient(135deg, rgba(252, 79, 229, 0.8), rgba(65, 153, 219, 0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    margin: auto;
+    max-width: 400px;
+  }
+  
+  .loginContainer h2 {
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 1.5em;
+    text-align: center;
+  }
+  
+  .loginContainer form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em; /* Adds consistent space between form elements */
+  }
+  
+  .loginContainer input {
+    padding: 0.9em;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--input-border-color);
+    outline: none;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .loginContainer input:focus {
+    border-color: var(--input-focus-border-color);
+    box-shadow: 0 0 6px rgba(65, 153, 219, 0.3);
+  }
+  
+  .loginContainer button {
+    padding: 0.9em;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+  }
+  
+  .loginContainer button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px); /* Slight hover effect */
+  }
+  
+  .logo {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    margin-bottom: 1.5em;
+  }
+  
+  .loginContainer h5 {
+    font-size: 1rem;
+    color: #eaedf8;
+    text-align: center;
+    margin-top: 1em;
+  }
+  
+  .loginBtn {
+    background: linear-gradient(90deg, var(--primary-color) 0%, #8F54D9 50%, var(--accent-color) 100%);
+    color: #eaedf8;
+    padding: 1em;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    max-width: 200px;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .loginBtn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, var(--accent-color) 0%, #8F54D9 50%, var(--primary-color) 100%);
+  }
+  
+  .loginContainer a {
+    text-decoration: none;
+    color: #171C30;
+  }
+  
+  .loginContainer a:hover {
+    color: #a907be;
+  }
