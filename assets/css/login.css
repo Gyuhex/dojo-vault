@@ -12,23 +12,22 @@
     width: 100%;
     margin: auto;
     max-width: 400px;
-  }
-  
-  .loginContainer h2 {
-    font-size: 1.6rem;
+}
+
+.loginContainer h4 {
     color: #fff;
     margin-bottom: 1.5em;
     text-align: center;
-  }
-  
-  .loginContainer form {
+}
+
+.loginContainer form {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.2em; /* Adds consistent space between form elements */
-  }
-  
-  .loginContainer input {
+    gap: 1.2em;
+}
+
+.loginContainer input {
     padding: 0.9em;
     font-size: 1rem;
     border-radius: 6px;
@@ -38,14 +37,22 @@
     max-width: 350px;
     text-align: center;
     transition: all 0.3s ease;
-  }
-  
-  .loginContainer input:focus {
+}
+
+/* Focus state */
+.loginContainer input:focus {
     border-color: var(--input-focus-border-color);
     box-shadow: 0 0 6px rgba(65, 153, 219, 0.3);
-  }
-  
-  .loginContainer button {
+}
+
+/* Click (active) state */
+.loginContainer input:active {
+    background-color: rgba(65, 153, 219, 0.1);
+    transform: scale(1.02); /* Slightly enlarge when clicked */
+}
+
+/* Button styles */
+.loginContainer button {
     padding: 0.9em;
     background-color: var(--primary-color);
     color: white;
@@ -58,28 +65,37 @@
     width: 100%;
     max-width: 350px;
     text-align: center;
-  }
-  
-  .loginContainer button:hover {
+}
+
+/* Button hover effect */
+.loginContainer button:hover {
     background-color: var(--accent-color);
-    transform: translateY(-3px); /* Slight hover effect */
-  }
-  
-  .logo {
+    transform: translateY(-3px);
+}
+
+/* Button click (active) effect */
+.loginContainer button:active {
+    transform: scale(0.98); /* Slightly shrink on click */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo styles */
+.logo {
     height: 140px;
     width: 140px;
     border-radius: 50%;
     margin-bottom: 1.5em;
-  }
-  
-  .loginContainer h5 {
+}
+
+.loginContainer h5 {
     font-size: 1rem;
     color: #eaedf8;
     text-align: center;
     margin-top: 1em;
-  }
-  
-  .loginBtn {
+}
+
+/* Login button with gradient */
+.loginBtn {
     background: linear-gradient(90deg, var(--primary-color) 0%, #8F54D9 50%, var(--accent-color) 100%);
     color: #eaedf8;
     padding: 1em;
@@ -90,18 +106,26 @@
     max-width: 200px;
     text-align: center;
     transition: background 0.3s ease, transform 0.2s ease;
-  }
-  
-  .loginBtn:hover {
+}
+
+/* Login button hover effect */
+.loginBtn:hover {
     transform: translateY(-2px);
     background: linear-gradient(90deg, var(--accent-color) 0%, #8F54D9 50%, var(--primary-color) 100%);
-  }
-  
-  .loginContainer a {
+}
+
+/* Login button click (active) effect */
+.loginBtn:active {
+    transform: scale(0.98); /* Slightly shrink on click */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Links */
+.loginContainer a {
     text-decoration: none;
     color: #171C30;
-  }
-  
-  .loginContainer a:hover {
+}
+
+.loginContainer a:hover {
     color: #a907be;
-  }
+}
