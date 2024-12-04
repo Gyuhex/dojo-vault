@@ -73,6 +73,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2em;
 }
 
   .logo {
@@ -82,5 +83,11 @@
   }
 
   .loginContainer h5 {
+    font-size: 1rem;
     color: #eaedf8;
 }
+
+  .loginBtn {
+    background: linear-gradient(90deg, #FC4FE5 0%, #8F54D9 50%, #4199DB 100%);
+    color: #eaedf8;
+  }
