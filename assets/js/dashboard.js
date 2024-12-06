@@ -37,12 +37,6 @@ function displayData() {
     renderMembershipChart(membershipCounts);
 }
 
-// Function to toggle sidebar visibility
-function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('active');
-}
-
 // Function to render the belt chart
 function renderBeltChart(beltCounts, totalStudents) {
     const ctx = document.getElementById('beltChart').getContext('2d');
