@@ -3,32 +3,42 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    border-radius: 1%;
     padding: 20px;
     box-sizing: border-box;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    background: linear-gradient(135deg, rgba(252, 79, 229, 0.8), rgba(65, 153, 219, 0.8)); /* Match login page background */
 }
 
 .dashboard {
     width: 100%;
     max-width: 1000px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for emphasis */
     color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background for contrast */
     box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .dashboard h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #fff; /* White text for header */
+    font-size: 1.8rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Subtle text shadow */
 }
 
 .chart-container {
     position: relative;
     width: 100%; /* Adjusts to the parent container's width */
     max-width: 600px; /* Prevents too wide charts */
-    margin: 0 auto; /* Center the chart */
+    margin: 20px auto; /* Center the chart and add spacing */
     overflow: hidden; /* Ensure no overflow issues */
+    padding: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2)); /* Subtle gradient for container */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .chart-container canvas {
