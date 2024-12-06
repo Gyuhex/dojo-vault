@@ -5,6 +5,7 @@
     align-items: flex-start;
     padding: 20px;
     box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .dashboard {
@@ -14,6 +15,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: white;
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .dashboard h2 {
@@ -22,14 +24,25 @@
 }
 
 .chart-container {
-    width: 45%;
-    margin: 20px 2.5%; 
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%; /* Adjusts to the parent container's width */
+    max-width: 600px; /* Prevents too wide charts */
+    margin: 0 auto; /* Center the chart */
+    overflow: hidden; /* Ensure no overflow issues */
 }
 
 .chart-container canvas {
-    width: 100%;
-    height: auto;
+    display: block;
+    width: 100%; /* Ensures the canvas scales responsively */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Optional: Add this for better responsiveness on smaller screens */
+@media screen and (max-width: 768px) {
+    .chart-container {
+        max-width: 100%; /* Allow full width on smaller screens */
+    }
+    .dashboard {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
 }
