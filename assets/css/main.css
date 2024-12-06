@@ -32,42 +32,50 @@ body {
 #sidebar {
   min-width: 250px;
   max-width: 250px;
-  background-color: rgba(0, 0, 0, 0.6); /* Dark transparent background to match dashboard */
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background for modern feel */
   color: #fff;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for modern effect */
   padding-top: 20px;
-  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.3); /* Slight shadow to match dashboard's box-shadow */
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3); /* More prominent shadow for modern look */
+  border-right: 1px solid rgba(255, 255, 255, 0.2); /* Light border for separation */
+  transform: translateX(0); /* Always visible on larger screens */
+  opacity: 1;
 }
 
+/* Heading for Sidebar */
 .sidebar-heading {
   font-size: 1.5rem;
   padding: 1rem 0;
-  background-color: rgba(252, 79, 229, 0.8); /* Primary color with transparency */
+  background-color: var(--primary-color); /* Solid primary color for better contrast */
   color: #fff;
   text-align: center;
   letter-spacing: 1px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Subtle shadow for text */
+  margin-bottom: 1rem;
 }
 
+/* List items in sidebar */
 .list-group-item {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.6); /* Matching transparent dark background */
   border: none;
   transition: background-color 0.3s ease-in-out;
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 1.1rem;
   text-transform: uppercase;
-  border-radius: 6px; /* Rounded corners for list items */
+  border-radius: 8px; /* Rounded corners for modern look */
+  margin-bottom: 10px;
 }
 
 .list-group-item:hover {
-  background-color: rgba(65, 153, 219, 0.8); /* Accent color with transparency */
+  background-color: var(--accent-color);
 }
 
 .list-group-item.active {
   background-color: var(--primary-color);
 }
 
+/* Close Button */
 #close-btn {
   background-color: transparent;
   border: none;
@@ -86,6 +94,24 @@ body {
   color: var(--primary-color);
 }
 
+/* Sidebar Button for small screens */
+#toggleSidebar {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  z-index: 1100;
+  display: none; /* Hide by default */
+}
+
+#toggleSidebar:hover {
+  background-color: var(--accent-color);
+}
+
 /* Main Content */
 #page-content-wrapper {
   flex: 1;
@@ -98,46 +124,34 @@ body {
 
 /* Responsive Sidebar for smaller screens */
 @media (max-width: 768px) {
+  /* Show the sidebar only when active */
   #sidebar {
     position: fixed;
     left: -250px;
     top: 0;
     height: 100%;
     z-index: 1000;
+    opacity: 0; /* Hidden by default */
   }
 
+  /* Show the sidebar when it is active */
   #sidebar.active {
     left: 0;
+    opacity: 1;
   }
 
+  /* Main content should adjust its margin when sidebar is visible */
   #page-content-wrapper {
     margin-left: 0;
   }
 
+  /* Show the hamburger menu on smaller screens */
   #toggleSidebar {
-    background-color: var(--primary-color);
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    padding: 10px;
-    z-index: 1100;
+    display: block; /* Only show on small screens */
   }
 
-  #toggleSidebar:hover {
-    background-color: var(--accent-color);
-  }
-
+  /* Show the close button when sidebar is active */
   #close-btn {
-    display: block; /* Show the close button only on small screens when sidebar is active */
-  }
-}
-
-/* Hide hamburger button on larger screens */
-@media (min-width: 768px) {
-  #toggleSidebar {
-    display: none; /* Hide hamburger menu on larger screens */
+    display: block; /* Only show on small screens when sidebar is active */
   }
 }
