@@ -59,6 +59,25 @@ body {
   transition: margin-left 0.3s ease-in-out;
 }
 
+#close-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem; /* Make the '×' larger */
+  cursor: pointer;
+  position: absolute;
+  top: 10px; /* Adjust the distance from the top */
+  right: 10px; /* Adjust the distance from the right */
+  padding: 5px; /* Add some padding for better click area */
+  z-index: 1050; /* Ensure it stays above other elements */
+}
+
+#close-btn:hover {
+  color: #FC4FE5; /* Add a hover effect to match your primary color */
+}
+
+
+
 
 /* Responsive Sidebar for smaller screens */
 @media (max-width: 768px) {
