@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
   background-color: var(--background-color);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,6 +16,7 @@ body {
   --input-focus-border-color: #4199DB;
 }
 
+/* Layout */
 .layout {
   display: flex;
   min-height: 100vh;
@@ -26,58 +28,73 @@ body {
   padding: 2em;
 }
 
+/* Sidebar */
 #sidebar {
   min-width: 250px;
   max-width: 250px;
-  background-color: #343a40;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark transparent background to match dashboard */
   color: #fff;
   transition: all 0.3s ease-in-out;
+  padding-top: 20px;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.3); /* Slight shadow to match dashboard's box-shadow */
 }
 
 .sidebar-heading {
   font-size: 1.5rem;
   padding: 1rem 0;
-  background-color: #495057;
+  background-color: rgba(252, 79, 229, 0.8); /* Primary color with transparency */
   color: #fff;
   text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Subtle shadow for text */
 }
 
 .list-group-item {
   color: #fff;
-  background-color: #343a40;
+  background-color: rgba(0, 0, 0, 0.6); /* Matching transparent dark background */
   border: none;
   transition: background-color 0.3s ease-in-out;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border-radius: 6px; /* Rounded corners for list items */
 }
 
 .list-group-item:hover {
-  background-color: #495057;
+  background-color: rgba(65, 153, 219, 0.8); /* Accent color with transparency */
 }
 
-#page-content-wrapper {
-  flex: 1;
-  padding: 20px;
-  transition: margin-left 0.3s ease-in-out;
+.list-group-item.active {
+  background-color: var(--primary-color);
 }
 
 #close-btn {
   background-color: transparent;
   border: none;
   color: white;
-  font-size: 2rem; /* Make the '×' larger */
+  font-size: 2rem;
   cursor: pointer;
   position: absolute;
-  top: 10px; /* Adjust the distance from the top */
-  right: 10px; /* Adjust the distance from the right */
-  padding: 5px; /* Add some padding for better click area */
-  z-index: 1050; /* Ensure it stays above other elements */
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  z-index: 1050;
+  display: none; /* Hide by default */
 }
 
 #close-btn:hover {
-  color: #FC4FE5; /* Add a hover effect to match your primary color */
+  color: var(--primary-color);
 }
 
-
-
+/* Main Content */
+#page-content-wrapper {
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.1); /* Slightly lighter background for the main content */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow for emphasis */
+}
 
 /* Responsive Sidebar for smaller screens */
 @media (max-width: 768px) {
@@ -97,4 +114,30 @@ body {
     margin-left: 0;
   }
 
+  #toggleSidebar {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    z-index: 1100;
+  }
+
+  #toggleSidebar:hover {
+    background-color: var(--accent-color);
+  }
+
+  #close-btn {
+    display: block; /* Show the close button only on small screens when sidebar is active */
+  }
+}
+
+/* Hide hamburger button on larger screens */
+@media (min-width: 768px) {
+  #toggleSidebar {
+    display: none; /* Hide hamburger menu on larger screens */
+  }
 }
