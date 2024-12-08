@@ -130,6 +130,8 @@ editStudent = (index) => {
 
         // Optionally, alert the user that the student was added
         alert("Student added successfully!");
+
+        event.target.reset();
     };
 }
 
