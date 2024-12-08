@@ -31,7 +31,7 @@ class StudentManager {
         if (students.length > 0) {
             students.forEach((student, index) => {
                 const studentDiv = document.createElement('div');
-                studentDiv.classList.add('col-md-4', 'mb-4');
+                studentDiv.classList.add('mb-4', 'studentInfoCard');
 
                 studentDiv.innerHTML = `
                     <div class="card h-100">

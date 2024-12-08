@@ -7,5 +7,10 @@ h2 {
 }
 
 .studentInfo {
-    padding: 2em;
+    background-color: aliceblue;
+}
+
+.studentInfoCard {
+    min-width: 200px;
+    background: #000;
 }
