@@ -24,4 +24,6 @@ document.getElementById('addStudentForm').addEventListener('submit', function(ev
 
     // Add student using the addStudent method
     studentManager.addStudent(student);
+
+    event.target.reset();
 });
