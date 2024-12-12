@@ -1,5 +1,5 @@
 .card-title {
-    color: #e944ff;
+    color: #383738;
 }
 
 h2 {
@@ -13,4 +13,8 @@ h2 {
 .studentInfoCard {
     min-width: 200px;
     background: #000;
+}
+
+.card-body {
+    background: linear-gradient(135deg, rgba(252, 79, 229, 0.8), rgba(65, 153, 219, 0.8));
 }
