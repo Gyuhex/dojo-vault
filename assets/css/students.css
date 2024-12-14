@@ -17,4 +17,5 @@ h2 {
 
 .card-body {
     background: linear-gradient(135deg, rgba(252, 79, 229, 0.8), rgba(65, 153, 219, 0.8));
+    border-radius: 2%;
 }
