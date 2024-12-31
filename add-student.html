@@ -10,8 +10,10 @@
 </head>
 <body>
     <div class="layout">
-        <div class="border-right" id="sidebar">
-            <div class="sidebar-heading text-white text-center">Dojo Vault</div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <button class="btn" id="close-btn" onclick="toggleSidebar()">×</button>
+            <div class="sidebar-heading text-white">Dojo Vault</div>
             <div class="list-group list-group-flush">
                 <a href="dashboard.html" class="list-group-item list-group-item-action text-white">Dashboard</a>
                 <a href="students.html" class="list-group-item list-group-item-action text-white">Students</a>
@@ -21,6 +23,7 @@
         </div>
     
         <div class="content d-flex justify-content-center">
+            <button class="btn btn-primary d-md-none" id="toggleSidebar" onclick="toggleSidebar()">☰</button>
             <div class="studentForm d-flex flex-column justify-content-center">
                 <form class="d-flex flex-column justify-content-center align-items-center" id="addStudentForm">
                     <h1>Student Form</h1>
